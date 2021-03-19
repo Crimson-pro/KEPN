@@ -69,6 +69,7 @@ class Vocab(object):
         sorted_tup = sorted(self.word_freq.items(), key=operator.itemgetter(1))
         sorted_tup.reverse()
         with open(filePath, 'w', encoding='utf8') as fd:
+            fd.write('<pad>\n')
             fd.write('<unk>\n')
             fd.write('<s>\n')
             fd.write('</s>\n')
